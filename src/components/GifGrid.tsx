@@ -6,13 +6,13 @@ interface GifGridProps {
 }
 
 export default function GifGrid({ category }: GifGridProps) {
-  const { data, loading } = useFetchGifs(category);
+  const { images, loading } = useFetchGifs(category);
 
   return (
     <>
       <h3>{category}</h3>
       <div className="card-grid">
-        {loading ? 'Loading...' : data.map(item => <GifGridItem key={item.id} {...item} />)}
+        {loading ? 'Loading...' : images.map(item => <GifGridItem key={item.id} {...item} />)}
       </div>
     </>
   );
