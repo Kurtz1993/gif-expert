@@ -10,7 +10,8 @@ const GifGrid = ({ category }: GifGridProps) => {
   const [images, setImages] = useState<GifInfo[]>([]);
 
   const getGifs = async () => {
-    const url = `http://api.giphy.com/v1/gifs/search?q=One%20Punch&limit=10&api_key=${process.env.REACT_APP_GIPHY_APIKEY}`;
+    const apiKey = process.env.REACT_APP_GIPHY_APIKEY;
+    const url = `http://api.giphy.com/v1/gifs/search?q=One%20Punch&limit=10&api_key=${apiKey}`;
 
     const resp = await fetch(url);
     const { data } = (await resp.json()) as { data: GifInfo[] };
