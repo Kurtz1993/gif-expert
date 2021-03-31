@@ -5,7 +5,7 @@ interface GifGridProps {
   category: string;
 }
 
-const GifGrid = ({ category }: GifGridProps) => {
+export default function GifGrid({ category }: GifGridProps) {
   const { data, loading } = useFetchGifs(category);
 
   return (
@@ -16,6 +16,4 @@ const GifGrid = ({ category }: GifGridProps) => {
       </div>
     </>
   );
-};
-
-export default GifGrid;
+}
