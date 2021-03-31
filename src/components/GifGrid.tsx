@@ -25,15 +25,14 @@ const GifGrid = ({ category }: GifGridProps) => {
   }, []);
 
   return (
-    <div>
+    <>
       <h3>{category}</h3>
-
-      <ol>
+      <div className="card-grid">
         {images.map(item => (
           <GifGridItem key={item.id} {...item} />
         ))}
-      </ol>
-    </div>
+      </div>
+    </>
   );
 };
 

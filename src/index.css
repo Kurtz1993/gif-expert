@@ -15,3 +15,25 @@ input {
   font-size: 1.2rem;
   color: grey;
 }
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  align-content: center;
+  border: 1px solid grey;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.card__title {
+  padding: 5px;
+  text-align: center;
+}
+
+.card__img {
+  max-height: 170px;
+}
