@@ -14,8 +14,10 @@ export default function AddCategory({ setCategories }: AddCategoryProps) {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    setCategories(categories => [...categories, inputValue]);
-    setInputValue('');
+    if (inputValue.trim().length > 2) {
+      setCategories(categories => [...categories, inputValue]);
+      setInputValue('');
+    }
   };
 
   return (
