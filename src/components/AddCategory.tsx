@@ -5,7 +5,7 @@ interface AddCategoryProps {
 }
 
 export default function AddCategory({ setCategories }: AddCategoryProps) {
-  const [inputValue, setInputValue] = useState('Hola');
+  const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -15,7 +15,7 @@ export default function AddCategory({ setCategories }: AddCategoryProps) {
     e.preventDefault();
 
     if (inputValue.trim().length > 2) {
-      setCategories(categories => [...categories, inputValue]);
+      setCategories(categories => [inputValue, ...categories]);
       setInputValue('');
     }
   };

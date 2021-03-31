@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { GifInfo } from '../models/gif-info.model';
 import GifGridItem from './GifGridItem';
+import { getGifs } from '../helpers/get-gifs.helper';
 
 interface GifGridProps {
   category: string;
@@ -9,20 +10,9 @@ interface GifGridProps {
 const GifGrid = ({ category }: GifGridProps) => {
   const [images, setImages] = useState<GifInfo[]>([]);
 
-  const getGifs = async () => {
-    const apiKey = process.env.REACT_APP_GIPHY_APIKEY;
-    const url = `http://api.giphy.com/v1/gifs/search?q=One%20Punch&limit=10&api_key=${apiKey}`;
-
-    const resp = await fetch(url);
-    const { data } = (await resp.json()) as { data: GifInfo[] };
-    const gifs = data.map(item => new GifInfo(item));
-
-    setImages(gifs);
-  };
-
   useEffect(() => {
-    getGifs();
-  }, []);
+    getGifs(category).then(imgs => setImages(imgs));
+  }, [category]);
 
   return (
     <>
