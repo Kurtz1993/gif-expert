@@ -1,6 +1,10 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react';
 
-export default function AddCategory() {
+interface AddCategoryProps {
+  setCategories: Dispatch<SetStateAction<string[]>>;
+}
+
+export default function AddCategory({ setCategories }: AddCategoryProps) {
   const [inputValue, setInputValue] = useState('Hola');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -9,7 +13,9 @@ export default function AddCategory() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(e);
+
+    setCategories(categories => [...categories, inputValue]);
+    setInputValue('');
   };
 
   return (
