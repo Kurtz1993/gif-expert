@@ -5,12 +5,14 @@ exports[`GifGridItem should render correctly 1`] = `
   className="card animate__animated animate__fadeIn"
 >
   <img
-    alt=""
+    alt="This is a mock title"
     className="card__img"
-    src=""
+    src="mockUrl"
   />
   <p
     className="card__title"
-  />
+  >
+    This is a mock title
+  </p>
 </div>
 `;

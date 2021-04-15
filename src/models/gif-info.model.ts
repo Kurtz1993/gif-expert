@@ -1,5 +1,5 @@
 export class GifInfo {
-  id: string;
+  id?: string;
   title: string;
   url: string;
 
