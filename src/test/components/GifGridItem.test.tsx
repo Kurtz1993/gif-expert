@@ -20,4 +20,17 @@ describe('GifGridItem', () => {
 
     expect(p.text().trim()).toBe(mockTitle);
   });
+
+  it('should have an img with the given title as an alt property and the given url as src', () => {
+    const img = wrapper.find('img');
+
+    expect(img.prop('alt')).toBe(mockTitle);
+    expect(img.prop('src')).toBe(mockUrl);
+  });
+
+  it('should have the class animate__fadeIn', () => {
+    const div = wrapper.find('div');
+
+    expect(div.hasClass('animate__fadeIn')).toBeTruthy();
+  });
 });
