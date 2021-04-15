@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifGridComponent should render 1`] = `
+<Fragment>
+  <h3>
+    Overwatch
+  </h3>
+  <div
+    className="card-grid"
+  >
+    Loading...
+  </div>
+</Fragment>
+`;
