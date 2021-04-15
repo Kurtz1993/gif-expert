@@ -2,7 +2,7 @@ import { GifInfo } from '../models/gif-info.model';
 
 export const getGifs = async (category: string) => {
   const apiKey = process.env.REACT_APP_GIPHY_APIKEY;
-  const url = `http://api.giphy.com/v1/gifs/search?q=${encodeURI(
+  const url = `https://api.giphy.com/v1/gifs/search?q=${encodeURI(
     category
   )}&limit=10&api_key=${apiKey}`;
 
