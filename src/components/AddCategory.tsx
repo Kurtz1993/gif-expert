@@ -1,10 +1,17 @@
-import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react';
+import {
+  ChangeEvent,
+  Dispatch,
+  FormEvent,
+  FunctionComponent,
+  SetStateAction,
+  useState,
+} from 'react';
 
 interface AddCategoryProps {
   setCategories: Dispatch<SetStateAction<string[]>>;
 }
 
-export default function AddCategory({ setCategories }: AddCategoryProps) {
+const AddCategory: FunctionComponent<AddCategoryProps> = ({ setCategories }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,4 +33,6 @@ export default function AddCategory({ setCategories }: AddCategoryProps) {
       <button type="submit">Add Category</button>
     </form>
   );
-}
+};
+
+export default AddCategory;

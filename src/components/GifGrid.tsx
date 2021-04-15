@@ -1,3 +1,4 @@
+import { FunctionComponent } from 'react';
 import { useFetchGifs } from '../hooks/use-fetch-gifs.hook';
 import GifGridItem from './GifGridItem';
 
@@ -5,7 +6,7 @@ interface GifGridProps {
   category: string;
 }
 
-export default function GifGrid({ category }: GifGridProps) {
+const GifGrid: FunctionComponent<GifGridProps> = ({ category }) => {
   const { images, loading } = useFetchGifs(category);
 
   return (
@@ -16,4 +17,6 @@ export default function GifGrid({ category }: GifGridProps) {
       </div>
     </>
   );
-}
+};
+
+export default GifGrid;
