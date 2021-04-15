@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import AddCategory from './components/AddCategory';
 import GifGrid from './components/GifGrid';
 
-export default function GifExpertApp() {
-  const [categories, setCategories] = useState(['One Punch']);
+export type GifExpertAppProps = {
+  defaultCategories?: string[];
+};
+
+const GifExpertApp: FunctionComponent<GifExpertAppProps> = ({ defaultCategories = [] }) => {
+  const [categories, setCategories] = useState(defaultCategories);
 
   return (
     <>
@@ -19,4 +23,6 @@ export default function GifExpertApp() {
       </ol>
     </>
   );
-}
+};
+
+export default GifExpertApp;
